@@ -1,0 +1,266 @@
+/* ==UserStyle==
+@name           Obsidian Website — Soft Light
+@namespace      github.com/YOUR_USERNAME/obsidian-website-soft-light
+@version        1.0.0
+@description    A soft light userstyle for the Obsidian website, with a light gray canvas and muted lavender accents.
+@author         Greennut
+@license        MIT
+@homepageURL    https://github.com/YOUR_USERNAME/obsidian-website-soft-light
+@supportURL     https://github.com/YOUR_USERNAME/obsidian-website-soft-light/issues
+==/UserStyle== */
+@-moz-document domain("obsidian.md") {
+/* 1. 全局浅灰画布与基础变量 */
+:root,
+body {
+    --background-primary: #f5f5f5 !important;
+    --background-primary-alt: #f5f5f5 !important;
+    --background-secondary: #f5f5f5 !important;
+    --background-secondary-alt: #f5f5f5 !important;
+    --text-normal: #161616 !important;
+    --text-muted: #505050 !important;
+}
+
+html,
+body,
+header,
+header.header,
+nav,
+main,
+section,
+article,
+aside,
+footer,
+[role="banner"],
+[role="navigation"] {
+    background-color: #f5f5f5 !important;
+    color: #161616 !important;
+}
+
+/* 2. 基础文字与单色 SVG 图标 */
+:where(h1, h2, h3, h4, h5, h6, p, a, li, dt, dd, span, strong, em, small, label, button):not(svg *):not([class*="icon"], [class*="logo"]) {
+    color: #161616 !important;
+}
+[class*="text-muted"],
+[class*="text-faint"],
+[class*="text-gray-"],
+[class*="text-neutral-"],
+[class*="text-zinc-"],
+[class*="text-slate-"] {
+    color: #505050 !important;
+}
+svg {
+    color: #161616 !important;
+}
+
+/* 3. 深色容器与 Markdown 正文 */
+[class*="bg-black"],
+[class*="bg-neutral-"],
+[class*="bg-zinc-"],
+[class*="bg-stone-"],
+[class*="bg-gray-"],
+[class*="bg-slate-"],
+[class*="bg-[#"],
+[class*="bg-background"],
+[class*="bg-secondary"],
+[class*="bg-muted"] {
+    background-color: #ffffff !important;
+}
+:is(.markdown-rendered, .markdown-preview-view, .markdown-body, .prose, [class*="readme"], [class*="Readme"], [class*="README"]) {
+    background-color: #ffffff !important;
+    color: #161616 !important;
+}
+
+/* 4. 搜索框、下拉框与主站网格卡片 */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+    background-color: #ffffff !important;
+    color: #161616 !important;
+    -webkit-text-fill-color: #161616 !important;
+    border-color: #d0d0d0 !important;
+}
+html body header.header div.bg-gray-800.rounded-full {
+    background: #ffffff !important;
+}
+html body header.header div.bg-gray-800.rounded-full > div,
+html body header.header div.bg-gray-800.rounded-full input {
+    background: transparent !important;
+}
+html body main .grid > a.group.pt-2,
+html body main .grid > a.group.pt-2 > div.flex.items-start.gap-4,
+html body main .grid > a.group.pt-2 > div.order-first {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 5. Plugins 吸顶栏与浅灰向下羽化渐变（已验证有效） */
+html body main div:has(> h1, > h2):has(select),
+html body main [class*="sticky"] {
+    background-color: #f5f5f5 !important;
+}
+html body main div:has(> h1, > h2)::after,
+html body main [class*="sticky"]::after {
+    background: linear-gradient(to bottom, #f5f5f5 0%, rgba(245, 245, 245, 0) 100%) !important;
+}
+
+
+/* 1. 修复 #scorecard 内部 <section> 被全局规则误染成 #f5f5f5 浅灰块，导致白底卡片内出现方形阴影断层的问题 */
+#scorecard,
+#scorecard > section,
+#scorecard > div,
+#scorecard > section > div {
+    background-color: #ffffff !important;
+    border-color: #e6e6e6 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* 2. 给外层 #scorecard 大卡片加上柔和的浅灰圆角描边，保持卡片轮廓完整 */
+#scorecard {
+    border: 1px solid #e2e2e2 !important;
+}
+
+
+
+
+/* 3. 修复 Updates 选中状态下的紫色数字徽章（bg-accent-500）高饱和与黑字对比度问题 */
+.bg-accent-500,
+[class*="bg-accent-"] {
+    background-color: #7b6cd9 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* 1. 左侧 Add to Obsidian 按钮：柔和薰衣草紫 #7b6cd9 + 纯白文字 */
+html body main :is(a, button):has(+ div.relative > button.button > svg.lucide-ellipsis) {
+    background-color: #7b6cd9 !important;
+    border-color: #7b6cd9 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+html body main :is(a, button):has(+ div.relative > button.button > svg.lucide-ellipsis):hover {
+    background-color: #6a5bc7 !important;
+}
+html body main :is(a, button):has(+ div.relative > button.button > svg.lucide-ellipsis) * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* 2. 右侧三个点（...）按钮：纯白填充 + 浅灰细描边 + 深黑图标 */
+html body button.button:has(svg.lucide-ellipsis) {
+    background-color: #ffffff !important;
+    color: #161616 !important;
+    border: 1px solid #d0d0d0 !important;
+    box-shadow: none !important;
+}
+html body button.button:has(svg.lucide-ellipsis):hover,
+html body button.button:has(svg.lucide-ellipsis):active {
+    background-color: #f2f2f2 !important;
+}
+html body button.button > svg.lucide-ellipsis {
+    color: #161616 !important;
+}
+
+/* 1. 主按钮（.button-primary，如 View Obsidian account）：柔和薰衣草紫 #7b6cd9 + 纯白文字与图标 */
+html body .button-primary {
+    background-color: #7b6cd9 !important;
+    border-color: #7b6cd9 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+html body .button-primary:hover {
+    background-color: #6a5bc7 !important;
+    border-color: #6a5bc7 !important;
+}
+html body .button-primary *,
+html body .button-primary svg {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* 2. 危险按钮（.button-danger，如 Disconnect）：柔和豆沙红 #df7676 + 纯白文字与图标 */
+html body .button-danger {
+    background-color: #df7676 !important;
+    border-color: #df7676 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+html body .button-danger:hover {
+    background-color: #d16262 !important;
+    border-color: #d16262 !important;
+}
+html body .button-danger *,
+html body .button-danger svg {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* 3. 个人资料页输入框与分割线软化（消除生硬黑粗框） */
+html body main input:not([type="checkbox"]):not([type="radio"]),
+html body main textarea,
+html body main select {
+    background-color: #ffffff !important;
+    border: 1px solid #d4d4d4 !important;
+    box-shadow: none !important;
+}
+html body main .divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #e2e2e2 !important;
+}
+
+/* 1. 修复移动端/平板展开导航抽屉（包含 ul.divide-gray-700 与 a.nav-item）的纯黑背景 */
+html body div:has(> div.mx-auto > ul.divide-gray-700),
+html body div:has(> ul.divide-gray-700),
+html body div:has(a.nav-item) {
+    background-color: #f5f5f5 !important;
+}
+
+/* 2. 抽屉内当前激活菜单项（.nav-item.text-accent，如 Profile）改为柔和紫 #7b6cd9 */
+html body a.nav-item.text-accent,
+html body a.nav-item.text-accent * {
+    color: #7b6cd9 !important;
+}
+
+
+/* 选中胶囊（.bg-accent-500）内的 SVG 图标同步改为纯白 */
+.bg-accent-500 svg,
+[class*="bg-accent-"] svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+/* 修复 Plugins 页筛选图标按钮：默认白底黑图标，展开选中时（.bg-accent-500）自动变成柔和紫底白图标 */
+  html body main div:has(> h1, > h2):has(select) button:not(.bg-accent-500):not([class*="bg-accent-"]) {
+    background-color: #ffffff !important;
+    border: 1px solid #d4d4d4 !important;
+  }
+  html body main div:has(> h1, > h2):has(select) button:not(.bg-accent-500):not([class*="bg-accent-"]) svg {
+    color: #161616 !important;
+    stroke: #161616 !important;
+  }
+
+/* 接管原生勾选框渲染（覆盖 appearance-auto）：明确定义未选中细边框与选中灰紫填充 */
+html body main input[type="checkbox"],
+html body input.accent-accent-500[type="checkbox"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 4px !important;
+    background-color: #ffffff !important;
+    border: 1.5px solid #a3a3a3 !important;
+    display: inline-grid !important;
+    place-content: center !important;
+    cursor: pointer !important;
+}
+
+html body main input[type="checkbox"]:checked,
+html body input.accent-accent-500[type="checkbox"]:checked {
+    background-color: #7b6cd9 !important;
+    border-color: #7b6cd9 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3.5 8.5 6.5 11.5 12.5 4.5'/%3E%3C/svg%3E") !important;
+    background-size: 12px 12px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+}
