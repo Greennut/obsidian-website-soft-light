@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           Obsidian Website — Soft Light
-@namespace      github.com/YOUR_USERNAME/obsidian-website-soft-light
+@namespace      github.com/Greennut/obsidian-website-soft-light
 @version        1.0.0
 @description    A soft light userstyle for the Obsidian website, with a light gray canvas and muted lavender accents.
 @author         Greennut
 @license        MIT
-@homepageURL    https://github.com/YOUR_USERNAME/obsidian-website-soft-light
-@supportURL     https://github.com/YOUR_USERNAME/obsidian-website-soft-light/issues
+@homepageURL    https://github.com/Greennut/obsidian-website-soft-light
+@supportURL     https://github.com/Greennut/obsidian-website-soft-light/issues
 ==/UserStyle== */
 @-moz-document domain("obsidian.md") {
 /* 1. 全局浅灰画布与基础变量 */
