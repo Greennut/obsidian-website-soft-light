@@ -1,5 +1,7 @@
 # obsidian-website-soft-light
 
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20with-Stylus-1185fe?style=for-the-badge&logo=stylus)](https://raw.githubusercontent.com/Greennut/obsidian-website-soft-light/refs/heads/main/obsidian-soft-light.user.css)
+
 [安装样式（Stylus）](https://raw.githubusercontent.com/Greennut/obsidian-website-soft-light/refs/heads/main/obsidian-soft-light.user.css)
 
 A soft light theme (userstyle) for the Obsidian website, with a light gray canvas and muted lavender accents.
