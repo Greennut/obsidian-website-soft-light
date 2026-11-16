@@ -23,10 +23,18 @@ A soft light userstyle for the Obsidian website, featuring a light gray canvas, 
 
 This is an unofficial website userstyle, not an Obsidian app theme. It is not affiliated with or endorsed by Obsidian.
 
-
-<img width="3008" height="1503" alt="35521" src="https://github.com/user-attachments/assets/489fc512-a5d1-4129-b10b-5daafe251355" />
+<img width="3008" height="1692" alt="35531" src="https://github.com/user-attachments/assets/7d5fb320-c842-4b03-adf6-037e39065f62" />
+<img width="3008" height="1692" alt="35529" src="https://github.com/user-attachments/assets/9ee4aa64-c1b8-4924-98ee-4f9cd114cd97" />
+<img width="3008" height="1692" alt="35530" src="https://github.com/user-attachments/assets/c6fc563e-b7b0-4710-a9b2-665321ea1db1" />
 <img width="3008" height="1169" alt="35519" src="https://github.com/user-attachments/assets/0f24dd1b-9450-4a96-b518-6a3098e0ccdf" />
-<img width="3008" height="7741" alt="35518" src="https://github.com/user-attachments/assets/1f8356e0-c7f1-4115-b8b6-2b266f37540d" />
+<img width="3008" height="1503" alt="35521" src="https://github.com/user-attachments/assets/489fc512-a5d1-4129-b10b-5daafe251355" />
+
+
+
+
+
+
+
 
 
 ## 已测试范围 / Tested areas
